@@ -36,6 +36,20 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+    <!-- Spring Session Dependency -->
+    <dependency>
+        <groupId>org.springframework.session</groupId>
+        <artifactId>spring-session-core</artifactId>
+        <version>2.7.0</version> <!-- Use the version compatible with your Spring Boot version -->
+    </dependency>
+
+    <!-- Add Spring Web for default web configurations -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
