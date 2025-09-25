@@ -8,7 +8,8 @@ public class CorsWebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("http://localhost:5173") // React dev server
+                .allowedOrigins("http://localhost:5173",
+                "https://farm-oracle-frontend.vercel.app") // React dev server
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true); // If you're sending cookies or auth headers
