@@ -1,8 +1,7 @@
 package com.agriculture.FarmOracle.Config;
 
-import java.io.FileInputStream;
-
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.ClassPathResource;
 
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
@@ -16,10 +15,11 @@ public class FirebaseConfig {
     @PostConstruct
     public void init() {
         try {
-            FileInputStream serviceAccount = new FileInputStream("E:/FarmOracle/Backend/agricultural_assistant/FarmOracle/src/main/resources/firebase-service-account.json");
+            // Load the service account file from classpath (src/main/resources)
+            ClassPathResource resource = new ClassPathResource("firebase-service-account.json");
 
             FirebaseOptions options = FirebaseOptions.builder()
-                    .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+                    .setCredentials(GoogleCredentials.fromStream(resource.getInputStream()))
                     .build();
 
             if (FirebaseApp.getApps().isEmpty()) {
