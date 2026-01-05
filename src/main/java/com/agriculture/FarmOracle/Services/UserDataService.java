@@ -63,11 +63,11 @@ public class UserDataService {
         reportData.put("temperature", userData.getTemperature());
         reportData.put("time", userData.getDate());
         reportData.put("crop_name", userData.getCrop_name());
-        reportData.put("price", userData.getPrice());
-        reportData.put("district", userData.getDistrict());
-        reportData.put("state", userData.getState());
-        reportData.put("predictedOnDate", userData.getPredictedOnDate());
-
+        reportData.put("nitrogen", userData.getNitrogen());
+        reportData.put("phosphorus", userData.getPhosphorus());
+        reportData.put("potassium", userData.getPotassium());
+        reportData.put("pH", userData.getpH());
+        reportData.put("crop_name", userData.getCrop_name());
         // Create or overwrite the report document with the same documentIndex
         DocumentReference reportDocRef = db
                 .collection("users_Data")
