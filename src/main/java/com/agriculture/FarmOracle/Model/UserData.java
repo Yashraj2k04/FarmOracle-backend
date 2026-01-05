@@ -12,12 +12,49 @@ public class UserData {
     private String district;
     private String state;
     private String predictedOnDate;
+    private Integer nitrogen;
+    private Integer phosphorus;
+    private Integer potassium;
+    private Double pH;
 
     public UserData() {
         // Needed for Firestore and JSON serialization
     }
 
     // Getters and Setters
+
+    
+    public Integer getNitrogen() {
+        return nitrogen;
+    }
+
+    public void setNitrogen(Integer nitrogen) {
+        this.nitrogen = nitrogen;
+    }
+
+    public Integer getPhosphorus() {
+        return phosphorus;
+    }
+
+    public void setPhosphorus(Integer phosphorus) {
+        this.phosphorus = phosphorus;
+    }
+
+    public Integer getPotassium() {
+        return potassium;
+    }
+
+    public void setPotassium(Integer potassium) {
+        this.potassium = potassium;
+    }
+
+    public Double getpH() {
+        return pH;
+    }
+
+    public void setpH(Double pH) {
+        this.pH = pH;
+    }
 
     public double getHumidity() {
         return humidity;
