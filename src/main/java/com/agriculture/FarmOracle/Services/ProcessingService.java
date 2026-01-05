@@ -25,13 +25,17 @@ public class ProcessingService {
         ObjectMapper objectMapper = new ObjectMapper();
         String jsonPayload = objectMapper.writeValueAsString(Map.of(
             "temperature", data.getTemperature(),
-            "humidity", data.getSoilMoisture() // mapping as per your requirement
+            "humidity", data.getSoilMoisture(), // mapping as per your requirement
+            "N", data.getNitrogen(),
+            "P", data.getPhosphorus(),
+            "K", data.getPotassium(),
+            "ph", data.getpH()
         ));
 
         // Build HTTP request
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-            .uri(URI.create("https://crop-predictor-api-0p5u.onrender.com/predict"))
+            .uri(URI.create("https://crop-prediction-rf.onrender.com/predict"))
             .header("Content-Type", "application/json")
             .POST(HttpRequest.BodyPublishers.ofString(jsonPayload))
             .build();
